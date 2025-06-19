@@ -22,7 +22,7 @@ export default function Footer() {
               src="https://api.heygaia.io/static/logo.png"
             />
             <Text className="mt-3 font-medium text-[16px] text-gray-900 mb-0">
-              GAIA Labs Inc.
+              GAIA Labs
             </Text>
           </Column>
         </Row>

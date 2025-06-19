@@ -8,13 +8,12 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     <>
       <Html>
         <Tailwind>
-          <Body className="mx-auto my-auto bg-white p-7 font-sans">
+          <Body className="mx-auto my-auto p-7 font-sans max-w-[520px]">
             <Header />
             <Hr />
 
-            <div className="my-16">{children}</div>
+            <div className="mt-14 mb-8">{children}</div>
 
-            <Hr />
             <Footer />
           </Body>
         </Tailwind>

@@ -11,6 +11,7 @@ import {
   Tailwind,
   Img,
   Column,
+  Row,
 } from "@react-email/components";
 import MainLayout from "../layouts/MainLayout";
 
@@ -33,16 +34,18 @@ const SupportConfirmationEmail = ({
 }: SupportConfirmationEmailProps) => {
   return (
     <MainLayout>
-      <Container className="max-w-[520px] mx-auto">
+      <Container>
         <Section className="text-center mb-10" align="center">
-          <div className="flex justify-center">
-            <Img
-              src="https://res.cloudinary.com/dwhuiazdn/image/upload/72558_d7yn3s.png"
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-          </div>
+          <Row>
+            <Column align="center">
+              <Img
+                src="https://res.cloudinary.com/dwhuiazdn/image/upload/72558_d7yn3s.png"
+                width={100}
+                height={100}
+                className="object-contain"
+              />
+            </Column>
+          </Row>
           <Heading className="mb-2">We're on it!</Heading>
           <Text className="text-base text-gray-600 m-0 leading-relaxed">
             Thanks for reaching out, {userName}
