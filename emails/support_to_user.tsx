@@ -1,17 +1,11 @@
-import * as React from "react";
 import {
-  Html,
-  Head,
-  Body,
-  Container,
-  Section,
-  Heading,
-  Text,
-  Hr,
-  Tailwind,
-  Img,
   Column,
+  Container,
+  Heading,
+  Img,
   Row,
+  Section,
+  Text,
 } from "@react-email/components";
 import MainLayout from "../layouts/MainLayout";
 
@@ -19,17 +13,17 @@ interface SupportConfirmationEmailProps {
   ticketId: string;
   requestTypeLabel: string;
   title: string;
+  description: string;
   userName: string;
-  userEmail: string;
   expectedResponseTime: string;
 }
 
 const SupportConfirmationEmail = ({
   ticketId = "TICKET-12345",
   requestTypeLabel = "Support Request",
-  title = "Unable to access my account",
+  title = "This is the title",
   userName = "Jane Doe",
-  userEmail = "user@example.com",
+  description = "This is the description",
   expectedResponseTime = "24 hours",
 }: SupportConfirmationEmailProps) => {
   return (
@@ -56,8 +50,11 @@ const SupportConfirmationEmail = ({
           <Text className="text-xs font-medium text-gray-500 m-0 mb-2 uppercase tracking-wide">
             {requestTypeLabel} #{ticketId}
           </Text>
-          <Text className="text-lg text-gray-900 m-0 font-medium leading-snug">
+          <Text className="text-lg text-gray-900 m-0 font-medium leading-snug mb-1">
             {title}
+          </Text>
+          <Text className="text-sm text-gray-700 m-0 leading-relaxed">
+            {description}
           </Text>
         </Section>
 
@@ -104,7 +101,6 @@ const SupportConfirmationEmail = ({
 SupportConfirmationEmail.PreviewProps = {
   ticketId: "TICKET-12345",
   requestTypeLabel: "Support Request",
-  title: "Unable to access my account",
   userName: "Jane Doe",
   userEmail: "user@example.com",
   expectedResponseTime: "24 hours",
