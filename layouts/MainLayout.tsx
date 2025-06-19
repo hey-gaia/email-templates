@@ -12,7 +12,8 @@ export default function MainLayout({ children }: { children: ReactNode }) {
             <Header />
             <Hr />
 
-            {children}
+            <div className="my-16">{children}</div>
+
             <Hr />
             <Footer />
           </Body>

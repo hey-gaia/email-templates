@@ -10,13 +10,27 @@ import {
 import MainLayout from "../layouts/MainLayout";
 
 interface SupportEmailProps {
-  ticketId: string;
-  requestTypeLabel: string;
-  title: string;
-  description: string;
-  userEmail: string;
-  userName: string;
+  ticketId?: string;
+  requestTypeLabel?: string;
+  title?: string;
+  description?: string;
+  userEmail?: string;
+  userName?: string;
 }
+
+// Template metadata for the email service
+export const displayName = "Support Admin Notification";
+export const description = "Email notification sent to admin team when a support ticket is created";
+export const category = "support";
+export const requiredFields = ["ticketId", "requestTypeLabel", "title", "description", "userEmail", "userName"];
+export const sampleProps = {
+  ticketId: "GAIA-20250101-ABC12345",
+  requestTypeLabel: "Support Request",
+  title: "Unable to access my account",
+  description: "I'm having trouble logging into my account. When I try to sign in, I get an error message saying my credentials are invalid, but I'm sure they're correct.",
+  userEmail: "user@example.com",
+  userName: "Jane Doe",
+};
 
 export default function SupportToAdminEmail({
   ticketId = "TICKET-12345",
