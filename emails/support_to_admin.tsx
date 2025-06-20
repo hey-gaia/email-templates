@@ -6,6 +6,7 @@ import {
   Button,
   Link,
   Hr,
+  Img,
 } from "@react-email/components";
 import MainLayout from "../layouts/MainLayout";
 
@@ -16,18 +17,33 @@ interface SupportEmailProps {
   description?: string;
   userEmail?: string;
   userName?: string;
+  attachments?: Array<{
+    filename: string;
+    file_url: string;
+    file_size: number;
+    content_type: string;
+  }>;
 }
 
 // Template metadata for the email service
 export const displayName = "Support Admin Notification";
-export const description = "Email notification sent to admin team when a support ticket is created";
+export const description =
+  "Email notification sent to admin team when a support ticket is created";
 export const category = "support";
-export const requiredFields = ["ticketId", "requestTypeLabel", "title", "description", "userEmail", "userName"];
+export const requiredFields = [
+  "ticketId",
+  "requestTypeLabel",
+  "title",
+  "description",
+  "userEmail",
+  "userName",
+];
 export const sampleProps = {
   ticketId: "GAIA-20250101-ABC12345",
   requestTypeLabel: "Support Request",
   title: "Unable to access my account",
-  description: "I'm having trouble logging into my account. When I try to sign in, I get an error message saying my credentials are invalid, but I'm sure they're correct.",
+  description:
+    "I'm having trouble logging into my account. When I try to sign in, I get an error message saying my credentials are invalid, but I'm sure they're correct.",
   userEmail: "user@example.com",
   userName: "Jane Doe",
 };
@@ -39,6 +55,44 @@ export default function SupportToAdminEmail({
   description = "I'm having trouble logging into my account. When I try to sign in, I get an error message saying my credentials are invalid, but I'm sure they're correct.",
   userEmail = "user@example.com",
   userName = "Jane Doe",
+  attachments = [
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+    {
+      filename: "Image Name",
+      file_size: 1024,
+      file_url: "https://placehold.co/600x400",
+      content_type: "PNG",
+    },
+  ],
 }: SupportEmailProps) {
   return (
     <MainLayout>
@@ -79,6 +133,34 @@ export default function SupportToAdminEmail({
               </Link>
             </Text>
           </div>
+
+          {attachments && attachments.length > 0 && (
+            <div className="mt-4">
+              <Text className="font-bold text-gray-700 m-0 mb-2">
+                Images ({attachments.length})
+              </Text>
+              <div className="flex gap-4 flex-wrap">
+                {attachments.map((attachment, index) => (
+                  <Link
+                    key={index}
+                    href={attachment.file_url}
+                    className="flex flex-col w-fit"
+                  >
+                    <Img
+                      src={attachment.file_url}
+                      alt="Cat"
+                      width="100"
+                      height="100"
+                      className="m-0 object-cover"
+                    />
+                    <Text className="m-0 text-xs text-[#00bbff]">
+                      {attachment.filename}
+                    </Text>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </Section>
 
         <Hr className="my-6" />
@@ -88,7 +170,7 @@ export default function SupportToAdminEmail({
             className="w-full rounded-lg bg-sky-500 hover:bg-sky-600 px-3 py-3 text-center font-semibold text-white"
             href="https://react.email"
           >
-            View & Respond to Ticket
+            Respond to Ticket
           </Button>
         </Section>
 
