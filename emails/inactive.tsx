@@ -21,33 +21,23 @@ const WelcomeEmail = ({
       <Container>
         <Section className="mb-8">
           <Text className="font-light text-medium">
-            Hey {userName}, <br /> Aryan here – one of the founders of GAIA{" "}
+            Hey {userName}, <br /> Aryan here – one of the founders of GAIA
             <br />
             <br />
-            Just wanted to say thanks for signing up.
+            Noticed you haven’t used GAIA in a bit — no worries at all, just
+            wanted to check in.
             <br />
             <br />
-            We've been working on this day and night for months, and it means a
-            lot to have you here early. We're just getting started, there's a
-            ton of features coming soon that we're really excited about, and
-            your feedback will shape a lot of it.
+            If it didn’t do what you were expecting, or something felt off, we'd
+            really appreciate hearing about it. We’re building this to be
+            genuinely helpful, and your feedback means a lot.
             <br />
             <br />
-            If you ever need anything, feel free to send me an email at
+            You can just reply here or hit me up at
             <Link href={`mailto:${supportEmail}`} className="px-1">
               {supportEmail}
             </Link>
-            or just reply to this email. I make sure to read all my emails :)
-            <br />
-            <br />
-            Also, if you want to stay in the loop, feel free to join our{" "}
-            <Link href={discordUrl}>Discord</Link>,{" "}
-            <Link href={whatsappUrl}>WhatsApp</Link>, or follow our{" "}
-            <Link href={twitterUrl}>Twitter</Link>
-            .
-            <br />
-            <br />
-            Glad you're here.
+            . I make sure to check all my emails.
             <br />
             <br />
             Best,
