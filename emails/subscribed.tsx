@@ -1,7 +1,13 @@
-import { Container, Link, Section, Text } from "@react-email/components";
+import {
+  Button,
+  Container,
+  Link,
+  Section,
+  Text,
+} from "@react-email/components";
 import MainLayout from "../layouts/MainLayout";
 
-interface WelcomeEmailProps {
+interface SubscribedEmailProps {
   userName: string;
   discordUrl: string;
   whatsappUrl: string;
@@ -9,13 +15,13 @@ interface WelcomeEmailProps {
   supportEmail: string;
 }
 
-const WelcomeEmail = ({
+const SubscribedEmail = ({
   userName,
   discordUrl,
   whatsappUrl,
   twitterUrl,
   supportEmail,
-}: WelcomeEmailProps) => {
+}: SubscribedEmailProps) => {
   return (
     <MainLayout showFooter={false} showHeader={false}>
       <Container>
@@ -28,14 +34,14 @@ const WelcomeEmail = ({
             lot.
             <br />
             <br />
-            We’ve been pouring everything into building this over the last few
+            We've been pouring everything into building this over the last few
             months, and seeing people support it like this keeps us going. Pro
             helps unlock more of what GAIA can do, and you can see all the
             features here.
             <br />
             <br />
-            If anything doesn’t feel right or you’re hoping it could do more,
-            I’d genuinely love to hear it. Just reply to this email — I read
+            If anything doesn't feel right or you're hoping it could do more,
+            I'd genuinely love to hear it. Just reply to this email — I read
             every one.
             <br />
             <br />
@@ -52,13 +58,30 @@ const WelcomeEmail = ({
             Best,
             <br /> Aryan
           </Text>
+          <Section className="mt-6 mb-6">
+            <Button
+              href="https://heygaia.io/login"
+              style={{
+                backgroundColor: "#00bbff",
+                color: "#ffffff",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontWeight: "normal",
+                fontSize: "14px",
+                display: "inline-block",
+              }}
+            >
+              Get Started
+            </Button>
+          </Section>
         </Section>
       </Container>
     </MainLayout>
   );
 };
 
-WelcomeEmail.PreviewProps = {
+SubscribedEmail.PreviewProps = {
   userName: "Dhruv",
   discordUrl: "https://discord.heygaia.io",
   whatsappUrl: "https://whatsapp.heygaia.io",
@@ -66,4 +89,4 @@ WelcomeEmail.PreviewProps = {
   supportEmail: "aryan@heygaia.io",
 };
 
-export default WelcomeEmail;
+export default SubscribedEmail;

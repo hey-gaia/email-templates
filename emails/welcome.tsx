@@ -1,4 +1,10 @@
-import { Container, Link, Section, Text } from "@react-email/components";
+import {
+  Button,
+  Container,
+  Link,
+  Section,
+  Text,
+} from "@react-email/components";
 import MainLayout from "../layouts/MainLayout";
 
 interface WelcomeEmailProps {
@@ -53,6 +59,23 @@ const WelcomeEmail = ({
             Best,
             <br /> Aryan
           </Text>
+          <Section className="mt-6 mb-6">
+            <Button
+              href="https://heygaia.io/login"
+              style={{
+                backgroundColor: "#00bbff",
+                color: "#ffffff",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                textDecoration: "none",
+                fontWeight: "normal",
+                fontSize: "14px",
+                display: "inline-block",
+              }}
+            >
+              Get Started
+            </Button>
+          </Section>
         </Section>
       </Container>
     </MainLayout>
